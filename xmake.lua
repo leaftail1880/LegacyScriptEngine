@@ -9,7 +9,7 @@ else
     add_requires("levilamina c59145f8bd574cfd181343590a56f0b30462764c", {configs = {target_type = "client"}})
 end
 
-add_requires("levibuildscript")
+add_requires("levibuildscript 0.4.0")
 
 add_requires(
     "legacymoney 0.10.0",
@@ -90,7 +90,7 @@ target("legacy-script-engine")
     )
     set_exceptions("none")
     set_kind("shared")
-    set_languages("cxx20")
+    set_languages("cxx23")
     set_symbols("debug")
     add_files(
         "src/**.cpp"
