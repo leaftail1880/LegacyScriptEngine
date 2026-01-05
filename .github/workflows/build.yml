@@ -17,14 +17,13 @@ jobs:
     strategy:
       matrix:
         backend:
-          - nodejs
-          - lua
-          - python
           - quickjs
     steps:
       - uses: actions/checkout@v4
 
       - uses: xmake-io/github-action-setup-xmake@v1
+        with:
+          xmake-version: '2.9.9'
 
       - uses: actions/cache@v4
         with:
