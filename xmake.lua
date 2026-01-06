@@ -8,6 +8,7 @@ package("preloader")
    on_install(function(package)
         os.cp("*", package:installdir())
     end)
+package_end()
 
 if is_config("target_type", "server") then
     add_requires("levilamina c59145f8bd574cfd181343590a56f0b30462764c", {configs = {target_type = "server"}})
