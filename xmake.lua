@@ -1,17 +1,9 @@
 add_rules("mode.debug", "mode.release")
 
-package("preloader")
-   add_urls("https://github.com/LiteLDev/PreLoader/releases/download/$(version)/preloader-$(version)-windows-x64.zip")
-   add_versions("v1.12.0", "20d5484c4b76396089d294d8b0373aa56d53cc3c4fdd9b3f3e7705d06b11e811")
-   on_install(function(package)
-        os.cp("*", package:installdir())
-    end)
-package_end()
-
 add_repositories("levimc-repo https://github.com/LiteLDev/xmake-repo.git")
 
 if is_config("target_type", "server") then
-    add_requires("levilamina 1.1.2", {configs = {target_type = "server"}})
+    add_requires("levilamina c59145f8bd574cfd181343590a56f0b30462764c", {configs = {target_type = "server"}})
     add_requireconfs("levilamina.bedrockdata", {override = true, version = "1.21.60.10-server"})
 else
     add_requires("levilamina c59145f8bd574cfd181343590a56f0b30462764c", {configs = {target_type = "client"}})
